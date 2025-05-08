@@ -1,16 +1,29 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import joblib
+# import joblib
 
 # Load the trained model
 
 
+
 import urllib.request
+import pickle  # instead of joblib
+
+# Download the model file
+model_url = "https://drive.google.com/uc?id=1ZRLGREdsFMl3w-gB1hLN_VjLJ2HdLGHR&export=download"
+model_path = 'house_price_model.pkl'
+urllib.request.urlretrieve(model_url, model_path)
+
+# Load with pickle instead of joblib
+with open(model_path, 'rb') as f:
+    model = pickle.load(f)
 
 
-urllib.request.urlretrieve("https://drive.google.com/uc?id=1ZRLGREdsFMl3w-gB1hLN_VjLJ2HdLGHR&export=download", 'house_price_model.pkl')
-model = joblib.load('house_price_model.pkl')
+
+
+# urllib.request.urlretrieve("https://drive.google.com/uc?id=1ZRLGREdsFMl3w-gB1hLN_VjLJ2HdLGHR&export=download", 'house_price_model.pkl')
+# model = joblib.load('house_price_model.pkl')
 
 
 
