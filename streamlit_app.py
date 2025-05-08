@@ -8,10 +8,9 @@ import joblib
 
 import urllib.request
 
-url = "https://drive.google.com/uc?id=1ZRLGREdsFMl3w-gB1hLN_VjLJ2HdLGHR&export=download"
-filename = "house_price_model.pkl"
-urllib.request.urlretrieve(url, filename)
-model = joblib.load(filename)
+
+urllib.request.urlretrieve("https://drive.google.com/uc?id=1ZRLGREdsFMl3w-gB1hLN_VjLJ2HdLGHR&export=download", 'house_price_model.pkl')
+model = joblib.load('house_price_model.pkl')
 
 
 
